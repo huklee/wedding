@@ -59,7 +59,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.html" title="uiCookies:Wedding">Jake <em>&amp;</em> Kate</a>
+          <a class="navbar-brand" href="index.html" title="uiCookies:Wedding">형욱<em>&amp;</em>은별</a>
         </div>
 
         <div id="navbar-collapse" class="navbar-collapse collapse">
@@ -79,14 +79,12 @@
         <div class="row">
           <div class="col-md-12 text-center text-intro probootstrap-animate">
             <h1>형욱<em>&amp;</em> 은별</h1>
-			<h2>September 8, 2019 &mdash; 라쿠치나 서울대학교점</h2>
+			<h2>September 8, 2019 &mdash; 라쿠치나, 서울대학교</h2>
           </div>
         </div>
       </div>
       <ul class="slides">
         <li id="background1" style="background-image: url(&{background};)" dadta></li>
-        <li style="background-image: url(img/hero_bg_2};)"></li>
-        <li style="background-image: url(img/hero_bg_3};)"></li>
       </ul>
     </section>
 
@@ -122,22 +120,53 @@
       </div>
     </section>
 
-    <section class="probootstrap-section probootstrap-border-top" data-section="rsvp">
+    <section class="probootstrap-section probootstrap-border-top" data-section="when-where">
 	  <div class="container">
         <div class="col-md-12 text-center"><h2>오시는 길</h2>
   		<h3>서울대학교 엔지니어 하우스 라쿠치나</h3>
         </div>
           <div class="col-md-6 text-center">
+          <p> <b> 위치 </b></p>
           <p> 서울 관악구 신림동 산56-1 (서울대학교 내) 02-875-7761</p>
-          <p> <b>승용차안내</b></p>
-          <p> 네비게이션 이용시 '서울대학교 엔지니어하우스' 또는 '라쿠치나 서울대점'을 입력하세요. (주차 가능)</p>
-          <p> <b>대중교통안내</b></p>
-          <p> 2호선 낙성대역 4번출구에서 관악02번 마을버스 타고 종점(제2공학관) 하차</p>
-          <p> 2호선 서울대입구역 3번출구에서 5511, 5513번 버스 타고 종점(제2공학관) 하차</p>
     	  </div>
         <div class="googlemap">
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3167.5164681252318!2d126.9509204!3d37.448526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9ff8ae55bfdb%3A0x203dd852665ccd9f!2z65287L-g7LmY64KYIOyEnOyauOuMgOygkA!5e0!3m2!1sko!2skr!4v1559982461545!5m2!1sko!2skr" style="border:0" allowfullscreen></iframe>
         </div>
+		<script type="text/javascript">
+				var map = new naver.maps.Map('map');
+				var myaddress = '라쿠치나 서울대점';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
+				  naver.maps.Service.geocode({address: myaddress}, function(status, response) {
+					  if (status !== naver.maps.Service.Status.OK) {
+						  return alert(myaddress + '의 검색 결과가 없거나 기타 네트워크 에러');
+					  }
+					  var result = response.result;
+					  // 검색 결과 갯수: result.total
+					  // 첫번째 결과 결과 주소: result.items[0].address
+					  // 첫번째 검색 결과 좌표: result.items[0].point.y, result.items[0].point.x
+					  var myaddr = new naver.maps.Point(result.items[0].point.x, result.items[0].point.y);
+					  map.setCenter(myaddr); // 검색된 좌표로 지도 이동
+					  // 마커 표시
+					  var marker = new naver.maps.Marker({
+						position: myaddr,
+						map: map
+					  });
+					  // 마커 클릭 이벤트 처리
+					  naver.maps.Event.addListener(marker, "click", function(e) {
+						if (infowindow.getMap()) {
+							infowindow.close();
+						} else {
+							infowindow.open(map, marker);
+						}
+					  });
+					  // 마크 클릭시 인포윈도우 오픈
+					  var infowindow = new naver.maps.InfoWindow({
+						  content: '
+					  });
+				  });
+			</script>
+			<div class="connect_naver_map">
+				<img src="img/naver_map_btn.png" height="15px" onclick="connectNaverMap()">
+			</div>
       </div>
     </section>
 
@@ -285,25 +314,6 @@
       </div>
     </section>
 
-    <section class="probootstrap-section probootstrap-section-colored-darker">
-      <div class="container text-center">
-        <div class="row">
-          <div class="col-md-12 probootstrap-animate"><h2 class="mt0">Register</h2></div>
-        </div>
-        <div class="row">
-          <div class="col-md-4 col-sm-4 col-xs-12 probootstrap-animate">
-            <a href="#" class="btn-register"><img src="img/bbab.png" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></a>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12 probootstrap-animate">
-            <a href="#" class="btn-register"><img src="img/cnb.png" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></a>
-          </div>
-          <div class="col-md-4 col-sm-4 col-xs-12 probootstrap-animate">
-            <a href="#" class="btn-register"><img src="img/amazon.png" alt="Free Bootstrap Template by uicookies.com" class="img-responsive"></a>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <footer class="probootstrap-footer">
       <div class="container text-center">
         <div class="row">
@@ -312,8 +322,6 @@
         </div>
       </div>
     </footer>
-
-    
 
     <script src="js/scripts.min.js"></script>
     <script src="js/custom.min.js"></script>

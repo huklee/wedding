@@ -127,3 +127,4 @@ gulp.task('default', ['sass', 'scripts', 'browser-sync'], function () {
     /* Watch .html files, run the bs-reload task on change. */
     gulp.watch(['*.html'], ['bs-reload']);
 });
+
