@@ -1602,3 +1602,17 @@ a:hover, a:focus, a:active {
     max-width: 100%;
   }
 }
+.googlemap {
+        position: relative;
+        padding-bottom: 75%; /* 4:3 ratio*/
+        height: 0;
+        overflow: hidden;
+}
+
+.googlemap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100% !important;
+    height: 100% !important;
+}
