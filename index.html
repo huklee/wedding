@@ -26,6 +26,7 @@
 		}
 	}
 	</script>
+                            
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>형욱 & 현정의 기쁜 날에 초대합니다.</title>
@@ -68,7 +69,7 @@
             <li><a href="#" data-nav-section="groom-bride">Groom &amp; Bride</a></li>
             <li><a href="#" data-nav-section="when-where">When &amp; Where</a></li>
             <li><a href="#" data-nav-section="gallery">Gallery</a></li>
-            <li><a href="#" data-nav-section="rsvp">RSVP</a></li>
+            <li><a href="#" data-nav-section="guest-book">Guest Book</a></li>
           </ul>
         </div>
       </div>
@@ -123,15 +124,19 @@
     <section class="probootstrap-section probootstrap-border-top" data-section="when-where">
 	  <div class="container">
         <div class="col-md-12 text-center"><h2>오시는 길</h2>
-  		<h3>서울대학교 엔지니어 하우스 라쿠치나</h3>
+  		<h3>서울대학교 엔지니어하우스,<br> 라쿠치나</h3>
         </div>
           <div class="col-md-6 text-center">
-          <p> <b> 위치 </b></p>
           <p> 서울 관악구 신림동 산56-1 (서울대학교 내) 02-875-7761</p>
     	  </div>
+		<div id="map" style="width:100%;height:400px;">
         <div class="googlemap">
   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3167.5164681252318!2d126.9509204!3d37.448526!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c9ff8ae55bfdb%3A0x203dd852665ccd9f!2z65287L-g7LmY64KYIOyEnOyauOuMgOygkA!5e0!3m2!1sko!2skr!4v1559982461545!5m2!1sko!2skr" style="border:0" allowfullscreen></iframe>
         </div>
+			<div class="connect_naver_map">
+				<img src="img/naver_map_btn.png" height="15px" onclick="connectNaverMap()">
+			</div>
+		</div>
 		<script type="text/javascript">
 				var map = new naver.maps.Map('map');
 				var myaddress = '라쿠치나 서울대점';// 도로명 주소나 지번 주소만 가능 (건물명 불가!!!!)
@@ -164,9 +169,6 @@
 					  });
 				  });
 			</script>
-			<div class="connect_naver_map">
-				<img src="img/naver_map_btn.png" height="15px" onclick="connectNaverMap()">
-			</div>
       </div>
     </section>
 
@@ -275,41 +277,32 @@
       </div>
     </section>
 
-    <section class="probootstrap-section probootstrap-border-top" data-section="rsvp">
+    <section class="probootstrap-section probootstrap-border-top" data-section="guest-book">
       <div class="container">
-        <div class="row mb40">
-          <div class="col-md-12 text-center">
-            <h2 class="mt0 mb10 probootstrap-animate">Will you attend?</h2>
-            <p>Please sign your RSVP</p>
-          </div>
+        <div class="row mb40 probootstrap-animate">
+          <div class="col-md-12 text-center"><h2>방명록</h2></div>
         </div>
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3">
-            <div class="probootstrap-card probootstrap-animate">
-              <form class="probootstrap-form">
-                <div class="form-group">
-                  <label for="name">Your Name</label>
-                  <input type="text" class="form-control" id="name">
-                </div>
-                <div class="form-group">
-                  <label for="email">Your Email</label>
-                  <input type="text" class="form-control" id="email">
-                </div>
-                <div class="form-group">
-                  <p>Will you attend?</p>
-                  <label for="yes"><input type="checkbox" id="yes"> Yes, I will be there</label> <br>
-                  <label for="no"><input type="checkbox" id="no"> Sorry, I can't come</label> <br>
-                </div>
-                <div class="form-group">
-                  <label for="note">Note</label>
-                  <textarea name="" id="note" cols="20" rows="5" class="form-control"></textarea>
-                </div>
-                <div class="form-group">
-                  <input type="submit" class="btn btn-primary btn-lg" value="Send RSVP">
-                </div>
-              </form>
-            </div>
-          </div>
+        <div class="row mb40">
+		  <div id="disqus_thread"></div>
+		  <script>
+		  	
+		  	/**
+		  	*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		  	*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		  	var disqus_config = function () {
+		  		this.page.url = "https://huklee.github.io/wedding/";  // Replace PAGE_URL with your page's canonical URL variable
+		  		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		  	};
+		  	(function() { // DON'T EDIT BELOW THIS LINE
+		  		var d = document, s = d.createElement('script');
+		  		s.src = 'https://huklee-github-io-wedding.disqus.com/embed.js';
+		  		s.setAttribute('data-timestamp', +new Date());
+		  		(d.head || d.body).appendChild(s);
+		  	})();
+		  </script>
+		  <script id="dsq-count-scr" src="//huklee-github-io-wedding.disqus.com/count.js" async></script>
+    	  <script src="js/scripts.min.js"></script>
+    	  <script src="js/custom.min.js"></script>
         </div>
       </div>
     </section>
@@ -323,8 +316,6 @@
       </div>
     </footer>
 
-    <script src="js/scripts.min.js"></script>
-    <script src="js/custom.min.js"></script>
 
 
   </body>
