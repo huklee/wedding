@@ -661,12 +661,12 @@ a:hover, a:focus, a:active {
 }
 
 .probootstrap-image.height-2x {
-  height: 630px;
+  height: 300px;
 }
 
 @media screen and (max-width: 1245px) {
   .probootstrap-image.height-2x {
-    height: 630px;
+    height: 300px;
   }
 }
 
@@ -1617,7 +1617,6 @@ a:hover, a:focus, a:active {
         position: relative;
         padding-bottom: 75%; /* 4:3 ratio*/
         height: 0;
-        overflow: hidden;
 }
 
 .googlemap iframe {
